@@ -33,9 +33,7 @@ If your SSH key was set up correctly, you will be logged into the compute server
 Update software sources, install upgrades, and prerequisites for SageMathCell:
 
 ```sh
-apt update
-apt upgrade
-apt install haproxy lxc python3-lxc python3-psutil rsyslog-relp
+apt update && DEBIAN_FRONTEND=noninteractive apt-get install -y haproxy lxc python3-lxc python3-psutil rsyslog-relp
 ```
 
 ## Create BTRFS for LXC
@@ -46,16 +44,19 @@ These commands create a 100GB sparse file for LXC containers to live in. Adjust 
 truncate -s 100G varliblxc.img
 losetup -fP --show varliblxc.img
 mkfs.btrfs /dev/loop5
-vi /etc/fstab
 ```
 
-The line that you need to add to `fstab` is
+We add a line to `/etc/fstab` to automatically mount our new btrfs filesystem:
 
-```
-/root/varliblxc.img /var/lib/lxc    btrfs   loop,noatime,compress=lzo       0       0
+```sh
+echo "/root/varliblxc.img /var/lib/lxc    btrfs   loop,noatime,compress=lzo       0       0" >> /etc/fstab
 ```
 
-Reboot to make sure that everything is working correctly. \(At the moment there is no way to recover if you mess up booting process; you woudd have to start from scratch or make a support request to [help@cocalc.com.](mailto:help@cocalc.com)\)
+Reboot to make sure that everything is working correctly. \(At the moment there is no way to recover if you mess up the booting process; you woudd have to start from scratch or make a support request to [help@cocalc.com.](mailto:help@cocalc.com)\)
+
+```sh
+reboot -h now
+```
 
 ## Create a Self-Signed SSL Certificate
 
@@ -94,7 +95,18 @@ so you get
 
 ![](.SageMathCell.md.upload/paste-0.43725874620434624)
 
-Now run the script to build and deploy the containers:
+<br/>
+
+_**NOTE:**_ The above is the first time in this entire tutorial where you have to explciitly edit a file.  One way to edit this file is using the command line terminal and some editor such as vim, joe, emacs, etc.  Another way is to copy the file to /home/user, click "Sync Files", edit the file in your project by clicking on it and editing it, click "Sync Files" again, then copy it back:
+
+```sh
+cp container_manager.py /home/user/
+# ... edit the file in cocalc after clicking "Sync Files"
+# click "Sync Files" again
+cp /home/user/container_manager.py .
+```
+
+Now run the script to build and deploy the containers, which should take a while:
 
 ```sh
 time ./container_manager.py --deploy
@@ -106,6 +118,7 @@ Once this is done, your server should be up and running. You may consider reduci
 
 At the moment booting up a machine with SageMathCell installed as above takes about 7 MINUTES. This is due to deliberate delays introduced by the management script which CoCalc is waiting on to consider the server ready. Please be patient when booting up!  You can also ssh to root@ip\-address\-of\-server just a few seconds after the server starts running.
 
-## Spot  Provisioning Issues
+## Spot Provisioning Issues
 
 If you are running your server on a spot instance, it may be randomly killed during peak usage times.  Currently CoCalc does not attempt to automatically restart your server if it is killed in this way, but that is on our roadmap.   Thus right now if you want your server to be up all of the time, select Standard instead of Spot under "Provisioning".  You can switch this setting back and forth any time the server is off.
+
