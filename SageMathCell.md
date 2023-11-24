@@ -106,7 +106,7 @@ cp container_manager.py /home/user/
 cp /home/user/container_manager.py .
 ```
 
-Now run the script to build and deploy the containers, which should take a while:
+Now run the script to build and deploy the containers, which should take **HOURS** as it installs a large number of Ubuntu packages and builds SageMath from source:
 
 ```sh
 time ./container_manager.py --deploy
