@@ -69,7 +69,7 @@ openssl x509 -req -days 365 -in mysagecell.csr -signkey mysagecell.key -out mysa
 cat mysagecell.crt mysagecell.key > mysagecell.pem
 chmod 0600 mysagecell.pem
 mkdir /etc/haproxy/cert
-cp mysagecell.crt /etc/haproxy/cert/
+cp mysagecell.pem /etc/haproxy/cert/
 ```
 
 ## Management Script
@@ -110,9 +110,25 @@ Now run the script to build and deploy the containers, which should take **HOURS
 
 ```sh
 time ./container_manager.py --deploy
+...
+########## 2023-11-24 22:43:45,871 INFO: successfully compiled SageCell ##########
+########## 2023-11-24 22:43:46,922 INFO: copying configuration files ##########
+Created symlink /etc/systemd/system/multi-user.target.wants/sagecell.service → /etc/systemd/system/sagecell.service.
+########## 2023-11-24 22:47:27,808 INFO: cloning sagecell to sc-0A ##########
+########## 2023-11-24 22:47:32,986 INFO: cloning sagecell to sc-1A ##########
+########## 2023-11-24 22:47:38,191 INFO: cloning sagecell to sc-2A ##########
+########## 2023-11-24 22:47:43,469 INFO: waiting for new containers to fully initialize... ##########
+
+real    141m3.170s
+user    440m11.191s
+sys     35m25.125s
 ```
 
-Once this is done, your server should be up and running. You may consider reducing resources of your compute server to lower the cost.
+Once this is done, your server should be up and running. Check it out:
+
+![](.SageMathCell.md.upload/paste-0.16683853339517452)
+
+You may now consider reducing resources of your compute server to lower the daily cost.
 
 ## Slow Start Up Warning
 
