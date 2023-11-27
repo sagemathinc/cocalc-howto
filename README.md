@@ -1,4 +1,10 @@
-# How to do things on https://cocalc.com
+# Applications of Compute Servers on https://CoCalc.com
+
+<div style="text-align:center">
+<br/>
+<img src=".landing.png"   width="278.352px"  height="277.023px"  style="object-fit:cover"/>
+<br/>
+</div>
 
 - [Use the Mathematica Jupyter Kernel](./mathematica.md)
 
@@ -9,3 +15,4 @@
 - [How to run your own CoCalc-Docker server on https://CoCalc.com](https://github.com/sagemathinc/cocalc-docker/blob/master/docs/cocalc.com.md)
 
 - [Run Your Own SageMathCell Server](./SageMathCell.md)
+
