@@ -6,7 +6,7 @@ This tutorial is designed to guide you through running Large Language Models sea
 
 ## Create a Compute Server with a sufficiently large GPU
 
-You can [browse a large number of models](https://ollama.ai/library). Once you have a sense of what you want to run, create a compute server with a GPU that has enough RAM. You typically want the instance and the GPU itself to have at least the following amount of RAM:
+You can [browse a large number of models](https://ollama.ai/library). Once you have a sense of what you want to run, create a compute server with a GPU that has enough RAM. You typically want the instance and the GPU itself to have at least the following amount of RAM.  Also, see the guidelines regarding disk space below.
 
 - 3b models \- anything
 - 7b models require about 8GB of RAM
@@ -16,6 +16,10 @@ You can [browse a large number of models](https://ollama.ai/library). Once you h
 
 Currently, CoCalc provides T4, L4, and A100 GPU's. The T4 GPU's have 16GB RAM each, the L4's have 24GB RAM each, and there are A100's with either 40GB or 80GB RAM.
 If you need say 64GB of RAM, you could use 4 L4's or a single A100 80GB or two A100 40GB's. For example, here I've configured a compute server with 4 x L4's in Taiwan for \$1.63/hour. The price is low because this is a spot instance \-\- it might not be available or might get killed \-\- but for experimenting with ollama, a spot instance can be a great choice!
+
+When you're browsing [the page about a model](https://ollama.ai/library/phind-codellama), click on ["Tags"](https://ollama.ai/library/phind-codellama/tags) to see exactly what you can download.  Under each tag there is a size, e.g., "19GB". Make sure your free disk space is bigger than this.   If you run out of disk space while downloading a model, at any point you can click "Edit" on your compute server, then increase the disk space, and in a few seconds your disk will be larger. You can type `df -h /` in the terminal to see free disk space.
+
+**WARNING:** Though you can change the number of GPU's after you run the compute server and stop it, in many cases **it won't boot** due to subtle changes in the underlying hardware of the VM.   If you do that, change the number of GPU's back to what it was before and the server will work again.   It's easy to make as many compute servers as you want at the same time in any project, but you have to download models separately to each one \(there is no cost to download models\).   
 
 ## Quickstart \-\- use the official Ollama image
 
