@@ -14,6 +14,18 @@ You can [browse a large number of models](https://ollama.ai/library). Once you h
 Currently, CoCalc provides T4, L4, and A100 GPU's. The T4 GPU's have 16GB RAM each, the L4's have 24GB RAM each, and there are A100's with either 40GB or 80GB RAM.
 If you need say 64GB of RAM, you could use 4 L4's or a single A100 80GB or two A100 40GB's. For example, here I've configured a compute server with 4 x L4's in Taiwan for \$1.63/hour. The price is low because this is a spot instance \-\- it might not be available or might get killed \-\- but for experimenting with ollama, a spot instance can be a great choice!
 
+THE REST OF THIS TUTORIAL WAS BEFORE THE NEW OLLAMA Image \-\- now choose that image instead of CUDA:
+
+![](.ollama.md.upload/paste-0.04944021143349042)
+
+Once the compute server starts up, open the URL and you can use ollama\-webui.  Open a terminal and select your ollama image, and you can check on disk space, look at logs in /var/log/supervisor, or do anything else.
+
+The rest of this tutorial is a "by scratch" guide to installing and using ollama in the terminal.
+
+---
+
+**old tutorial follows** 
+
 Also, use "CUDA Toolkit" as the image, since ollama is self contained software, and you won't be using PyTorch and Tensorflow.  This does give you the ability to also easily build any version of ollama from source.
 
 ![](.ollama.md.upload/paste-0.5447573942131758)
@@ -141,3 +153,4 @@ NOTE: when you make the compute server, you can choose a much cheaper non-SSD, w
 ## Conclusion
 
 Congratulations on getting your Large Language Model up and running on CoCalc using Ollama! You can now easily experiment, deploy, and manage a wide range of language models. Do remember to efficiently manage your resources and stop or deprovision your compute server when not in use. Feel free to create different compute servers in your CoCalc project based on your needs. We hope you enjoyed this tutorial,  and continue exploring the possibilities of language models. Happy CoCalcing!
+
