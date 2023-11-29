@@ -6,25 +6,37 @@ This tutorial is designed to guide you through running Large Language Models sea
 
 You can [browse a large number of models](https://ollama.ai/library). Once you have a sense of what you want to run, create a compute server with a GPU that has enough RAM. You typically want the instance and the GPU itself to have at least the following amount of RAM:
 
-- 3b models - anything
-- 7b models require at least 8GB of RAM
-- 13b models require at least 16GB of RAM
-- 70b models require at least 64GB of RAM
+- 3b models \- anything
+- 7b models require about 8GB of RAM
+- 13b models require about 16GB of RAM  \(example: a single L4 GPU\)
+- 30b models require about 32GB of RAM \(example: 2 x L4 GPU's\)
+- 70b models require about 64GB of RAM   \(example: 4 x L4 GPU's\)
 
 Currently, CoCalc provides T4, L4, and A100 GPU's. The T4 GPU's have 16GB RAM each, the L4's have 24GB RAM each, and there are A100's with either 40GB or 80GB RAM.
 If you need say 64GB of RAM, you could use 4 L4's or a single A100 80GB or two A100 40GB's. For example, here I've configured a compute server with 4 x L4's in Taiwan for \$1.63/hour. The price is low because this is a spot instance \-\- it might not be available or might get killed \-\- but for experimenting with ollama, a spot instance can be a great choice!
+
+## Quickstart \-\- use the official Ollama image
 
 THE REST OF THIS TUTORIAL WAS BEFORE THE NEW OLLAMA Image \-\- now choose that image instead of CUDA:
 
 ![](.ollama.md.upload/paste-0.04944021143349042)
 
-Once the compute server starts up, open the URL and you can use ollama\-webui.  Open a terminal and select your ollama image, and you can check on disk space, look at logs in /var/log/supervisor, or do anything else.
+Once the compute server starts up, open the URL and you can use ollama\-webui.  Open a terminal and select your ollama image, and you can check on disk space, look at logs in /var/log/supervisor, or do everything else described below.  You should definitely read the rest of the tutorial below because though ollama\-webui is a nice frontend, it provides much less insight into what is going on regarding downloading or running models than the terminal. In particular:
 
-The rest of this tutorial is a "by scratch" guide to installing and using ollama in the terminal.
+```sh
+(compute-server-109) ~/ollama$ ollama run orca-mini  # see progress as model gets pull
+# once it works, refresh the webui and use it there.
+
+(compute-server-109) ~/ollama$ htop   # see process
+
+(compute-server-109) ~/ollama$ tail -f /var/log/supervisor/ollama-std*    # see logs
+```
+
+**Using spot L4 GPU's is also a very good choice, so things are pretty fast even with larger models.**
 
 ---
 
-**old tutorial follows** 
+# From Scratch Tutorial
 
 Also, use "CUDA Toolkit" as the image, since ollama is self contained software, and you won't be using PyTorch and Tensorflow.  This does give you the ability to also easily build any version of ollama from source.
 
