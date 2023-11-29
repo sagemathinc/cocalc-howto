@@ -2,6 +2,8 @@
 
 This tutorial is designed to guide you through running Large Language Models seamlessly on [CoCalc.com](http://CoCalc.com) using [Ollama](https://ollama.ai/). We will cover the step\-by\-step process to set up a compute server, navigate Ollama's extensive library of models, and manage server resources for optimised performance. With **prices starting at \$0.13/hour**, we aim to provide an accessible and cost\-effective solution for language model experimentation.
 
+![](.ollama.md.upload/paste-0.27876508292174473)
+
 ## Create a Compute Server with a sufficiently large GPU
 
 You can [browse a large number of models](https://ollama.ai/library). Once you have a sense of what you want to run, create a compute server with a GPU that has enough RAM. You typically want the instance and the GPU itself to have at least the following amount of RAM:
