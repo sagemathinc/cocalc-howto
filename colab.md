@@ -1,6 +1,6 @@
 # Using the Google Colab Environment with and without a GPU Online Via CoCalc
 
-Video: 
+Video: https://youtu.be/kcxyShH3wYE
 
 In CoCalc you can use the same Python/R environments that are part of Colab, both with and without a GPU.  
 
