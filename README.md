@@ -17,3 +17,6 @@
 - [Run Your Own SageMathCell Server](./SageMathCell.md)
 
 - [Using PyTorch with a GPU in a Jupyter Notebook Online Via CoCalc](./pytorch.md)
+
+- [Using the Google Colab Environment with and without a GPU Online Via CoCalc
+](./colab.md)
