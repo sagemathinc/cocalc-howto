@@ -21,5 +21,5 @@
 - [Using the Google Colab Environment with and without a GPU Online Via CoCalc
   ](./colab.md)
 
-- Building SageMath from Source on CoCalc using a 60 CPU machine with 240GB RAM in 18 Minutes
+- [Building SageMath from Source on CoCalc using a 60 CPU machine with 240GB RAM in 18 Minutes](./build-sage.md)
 

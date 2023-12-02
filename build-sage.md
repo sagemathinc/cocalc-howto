@@ -1,6 +1,6 @@
-# Building SageMath from Source on CoCalc using a 60 CPU machine with 240GB RAM in 18 Minutes
+# Building SageMath from Source in 18 Minutes on CoCalc using a 60 CPU machine with 240GB RAM
 
-Video: 
+Video: https://youtu.be/b8e8qq-KWbA
 
 You can now quickly build the latest devel version of [SageMath](https://sagemath.org) from source in 18 minutes on https://cocalc.com using a [compute server](https://doc.cocalc.com/compute_server.html).
 
@@ -16,9 +16,11 @@ Make sure to:
 
 - select the Python image
 - have at least 30GB of disk space
-- configure a fast data directory:
+- configure a fast non-sync'd data directory:
 
 ![](.build-sage.md.upload/paste-0.3826843758977656)
+
+This fast data directory is important not only for speed, but because it isn't synchronized back to our project. The Sage build will use up over 10GB of disk space, and wouldn't fit in a CoCalc project (with significant upgrades), so we want it to live only on the remote compute server.
 
 <br/>
 
@@ -41,7 +43,7 @@ of Sage via `git clone https://github.com/sagemath/sage`:
 
 ## Configure and Build Sage
 
-After getting the sage source code, configure and start the build.  If you know about tmux (or screen), I recommend running this in tmux, since there will be a MASSIVE amount of output flying by.
+After getting the sage source code, configure and start the build. If you know about tmux (or screen), I recommend running this in tmux, since there will be a MASSIVE amount of output flying by.
 
 ```sh
 (compute-server-150) ~/sage$ # optional: run tmux or screen
@@ -61,7 +63,7 @@ Sage build/upgrade complete!
 ## Change Your Compute Server to be Less Powerful
 
 Now that you're done building Sage, you probably don't need
-a 60 CPU monster computer.  Click on the bar at the top, stop
+a 60 CPU monster computer. Click on the bar at the top, stop
 the server, edit it, and start it again.
 
 ![](.build-sage.md.upload/paste-0.8336088964376351)
@@ -72,10 +74,10 @@ the server, edit it, and start it again.
 
 ## Install the Sage Jupyter Kernel
 
-As explained [here](https://doc.sagemath.org/html/en/installation/launching.html), the following command installs the Sage Jupyter kernel.   This command will give an error at the end because we didn't build the docs (which takes a long time and doesn't leverage our huge parallel machine). However, it still works and installs the kernel:
+As explained [here](https://doc.sagemath.org/html/en/installation/launching.html), the following command installs the Sage Jupyter kernel. This command will give an error at the end because we didn't build the docs (which takes a long time and doesn't leverage our huge parallel machine). However, it still works and installs the kernel:
 
 ```sh
-(compute-server-150) ~/sage/sage$ jupyter kernelspec install --user $(./sage -sh -c 'ls -d $SAGE_VENV/share/jupyter/kernels/sagemath') --name sagemath-dev 
+(compute-server-150) ~/sage/sage$ jupyter kernelspec install --user $(./sage -sh -c 'ls -d $SAGE_VENV/share/jupyter/kernels/sagemath') --name sagemath-dev
 ```
 
 That said, if you want to install the kernel manually, do this:
@@ -89,13 +91,10 @@ Available kernels:
   python3         /usr/local/share/jupyter/kernels/python3
 ```
 
-Once you do this, you can open a Jupyter notebook by clicking "+New" then "Jupyter Notebook".  Just like with a terminal, set the notebook to run on your compute server.   Refresh the available kernels, and select your sagemath kernel.   You can then use your new copy of Sage from Jupyter!
+Once you do this, you can open a Jupyter notebook by clicking "+New" then "Jupyter Notebook". Just like with a terminal, set the notebook to run on your compute server. Refresh the available kernels, and select your sagemath kernel. You can then use your new copy of Sage from Jupyter!
 
 ## Conclusion
 
 I hope you found this useful and will use bleading edge versions of Sage for amazing mathematical research, and contribute back.
 
-
-
-
-
+Challenge: If you somehow build Sage from source on CoCalc in less than 17 minutes, please let me know (Ideas: use a more poweful machine, use a ramdisk, etc.)!  wstein@cocalc.com
