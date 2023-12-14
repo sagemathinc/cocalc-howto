@@ -1,6 +1,15 @@
 # Efficiently Running and Managing Large Language Models using a GPU on CoCalc.com with Ollama: A Tutorial
 
-**Video:** https://youtu.be/1xA6pXMZFIU 
+**Videos:** 
+
+- complete demo -- https://youtu.be/1xA6pXMZFIU 
+- demo of latest version using a multimodal model -- https://youtu.be/X5fbG-QAxDs
+
+UPDATES:
+
+- Dec 14, 2023 \-\- updated ollama and ollama\-webui to support multimodal models!<img src=".ollama.md.upload/paste-0.5831256738722361"   width="536.544px"  height="405.84400000000005px"  style="object-fit:cover"/>
+
+---
 
 This tutorial is designed to guide you through running Large Language Models seamlessly on [CoCalc.com](http://CoCalc.com) using [Ollama](https://ollama.ai/). We will cover the step\-by\-step process to set up a compute server, navigate Ollama's extensive library of models, and manage server resources for optimised performance. With **prices starting at \$0.13/hour**, we aim to provide an accessible and cost\-effective solution for language model experimentation.
 
