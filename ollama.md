@@ -7,6 +7,7 @@
 
 UPDATES:
 
+- Dec 16, 2023 \-\- Mixtral works extremely well with 2xL4's, but you need to explicitly update ollama in a terminal by typing `curl https://ollama.ai/install.sh | sh` then restarting your server \(or kill the running oleama server and do `ollama serve` \).  It takes about 5\-10 minutes to download the weights, and uses about 30GB additional disk space.  Inference is very fast on a 2xL4's, for \$1/hour.
 - Dec 14, 2023 \-\- updated ollama and ollama\-webui to support multimodal models!<img src=".ollama.md.upload/paste-0.5831256738722361"   width="536.544px"  height="405.84400000000005px"  style="object-fit:cover"/>
 
 ---
