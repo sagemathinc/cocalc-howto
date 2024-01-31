@@ -12,7 +12,7 @@ Click "Servers" in any CoCalc project:
 
 <br/>
 
-Then create a new **Compute Server** with the Python image and make sure you create a disk that is at least 15GB bigger than the minimum, e.g., 30GB would be a good choice:
+Then create a new **Compute Server** with the Python image and make sure you create a _**disk that is at least 10GB bigger than the minimum, so a 20GB would be a good choice.**_  You can easily expand the disk later at any time, without having to restart anything.
 
 <br/>
 
@@ -37,7 +37,7 @@ sudo apt-get update && sudo apt-get install -y libgl1-mesa-glx libasound2 libxkb
 Download and **install Wolfram Engine** \(check https://www.wolfram.com/engine/  for the latest version number\):
 
 ```sh
-cd /tmp && wget -O math.sh 'https://account.wolfram.com/dl/WolframEngine?version=13.3&platform=Linux&downloadManager=false&includesDocumentation=false' && chmod +x math.sh && sudo ./math.sh < /dev/null
+cd /tmp && wget -O math.sh 'https://account.wolfram.com/dl/WolframEngine?version=13.3&platform=Linux&downloadManager=false&includesDocumentation=false' && chmod +x math.sh && sudo ./math.sh
 ```
 
 **Start Wolfram Engine** and sign in using your account:
