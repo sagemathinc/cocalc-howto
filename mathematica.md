@@ -1,5 +1,7 @@
 # How to use the Mathematica Jupyter Kernel on [CoCalc.com](http://CoCalc.com)
 
+_TIME: This tutorial takes less than 10 minutes to complete._
+
 It is finally easy to run Mathematica Jupyter notebooks on https://cocalc.com via a  Wolfram Engine license!  You only have to pay for the compute resources you use, which start at about \$0.02/hour.
 
 **CAVEAT:** You should probably only use this if you are paying Mathematica customer.  I do not know how to buy a Wolfram Engine license.  If you use the free version, as explained below, then run your VM later, it'll will likely complain when you try again, as follows: _"The Wolfram Engine could not be activated using your Wolfram ID.  This may have occurred because WolframScript has already activated a different installation of the Wolfram Engine using your account's limited free activation keys. Only two keys are generated when you create a free Wolfram Engine license."_   It seems like Wolfram never implemented a way to **deactivate** a free Wolfram Engine license once you activate it, it never times out, and the license is tied to the exact VM you activate the license on, so this is completely unusable in a cloud context, unfortunately.
