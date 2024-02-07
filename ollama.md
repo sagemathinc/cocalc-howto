@@ -1,5 +1,100 @@
 # Efficiently Running and Managing Large Language Models using a GPU on CoCalc.com with Ollama: A Tutorial
 
+## Feb 6, 2024
+
+In order to install the absolutely latest version of ollama\-webui with ollama, please do the following:
+
+Step 1. Make a compute server with a GPU and use the "CUDA Development" image.
+
+Step 2. Create a new Linux Terminal in CoCalc, and set the computer server where it runs to your new server.
+
+Step 3. Clone the ollama\-webui GitHub repository:
+
+```sh
+git clone https://github.com/ollama-webui/ollama-webui
+```
+
+Step 4.  Install lspci
+
+```sh
+sudo apt install pciutils
+```
+
+Step 5.  Setup the Docker images for ollama and ollama\-webui \-\- this will take about 5 minutes
+
+```sh
+cd ollama-webui
+./run-compose.sh --enable-gpu --webui[port=80]
+
+# Press return after you see the "Current Setup" display!
+```
+
+You may have to press enter a few times to get it going.  If you setup a compute server with two GPU's, include the option `--enable-gpu[count=1]` .
+
+You will see this output:
+
+```sh
+(compute-server-927) ~/ollama-webui$ ./run-compose.sh --enable-gpu --webui[port=80]
+Enabling GPU with 1 GPUs
+
+Current Setup:
+   GPU Driver: nvidia
+   GPU Count: 1
+   WebAPI Port: Not Enabled
+   Data Folder: Using ollama volume
+   WebUI Port: 443
+
+Do you want to proceed with current setup? (Y/n): 
+
+
+[+] Running 19/19
+ ✔ ollama-webui 14 layers [⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]      0B/0B      Pulled            45.2s 
+   ✔ c57ee5000d61 Pull complete                                               0.5s 
+   ✔ be0f2e005f57 Pull complete                                               0.3s 
+   ✔ eab129fe7d73 Pull complete                                               0.5s 
+   ✔ dd24933c9a93 Pull complete                                               0.6s 
+   ✔ 3fcbdacf3969 Pull complete                                               0.7s 
+   ✔ f2c1aef8c7fd Pull complete                                               0.7s 
+   ✔ 2290acfa02c4 Pull complete                                               0.8s 
+   ✔ ae0c48d3727f Pull complete                                               3.3s 
+   ✔ 186b1fe8276c Pull complete                                               2.9s 
+   ✔ 2b65a57a2cbc Pull complete                                               3.0s 
+   ✔ 4a7e14be505e Pull complete                                               3.0s 
+   ✔ affcdaf37b75 Pull complete                                               3.8s 
+   ✔ 784f83807364 Pull complete                                               3.3s 
+   ✔ 254bce9c0454 Pull complete                                               3.4s 
+ ✔ ollama 3 layers [⣿⣿⣿]      0B/0B      Pulled                               7.0s 
+   ✔ 57c139bbda7e Pull complete                                               0.3s 
+   ✔ efa866b73628 Pull complete                                               0.3s 
+   ✔ b930de02cbec Pull complete                                               2.7s 
+[+] Running 5/5
+ ✔ Network ollama-webui_default        Crea...                                0.1s 
+ ✔ Volume "ollama-webui_ollama"        Crea...                                0.0s 
+ ✔ Volume "ollama-webui_ollama-webui"  Created                                0.0s 
+ ✔ Container ollama                    Started                                4.8s 
+ ✔ Container ollama-webui              Started                                0.2s 
+
+Compose project started successfully.
+```
+
+You can type `docker ps -a` in your terminal to see that some ollama containers are running!
+
+Step 6.  Connect to your server and make an admin account.  The top of your server config will look like this:
+
+![](.ollama.md.upload/paste-0.8772460509571076)
+
+Copy and paste the ip address, with http:// in front of it \(not https!\).
+
+You now have the latest ollama\-webui running and you can install any models, etc.  Here's my first test just now:
+
+<img src=".ollama.md.upload/paste-0.1151416617247496"   width="592.77px"  height="492.562px"  style="object-fit:cover"/>
+
+**IMPORTANT:** this setup does not have any SSL cert, so your password is sent in the clear.   Please do not consider this secure.  An older version is described below that is secure, and we will also create an image very soon that has SSL cert stuff built in \(like our older ones below\)! 
+
+## Older directions, videos, etc.
+
+---
+
 **Videos:** 
 
 - complete demo -- https://youtu.be/1xA6pXMZFIU 
@@ -7,7 +102,7 @@
 
 UPDATES:
 
-- Dec 16, 2023 \-\- Mixtral works extremely well with 2xL4's, but you need to explicitly update ollama in a terminal by typing `curl https://ollama.ai/install.sh | sh` then restarting your server \(or kill the running oleama server and do `ollama serve` \).  It takes about 5\-10 minutes to download the weights, and uses about 30GB additional disk space.  Inference is very fast on a 2xL4's, for \$1/hour.
+- Dec 16, 2023 \-\- Mixtral works extremely well with 2xL4's, but you need to explicitly update ollama in a terminal by typing `curl https://ollama.ai/install.sh | sh` then restarting your server \(or kill the running olama server and do `ollama serve` \).  It takes about 5\-10 minutes to download the weights, and uses about 30GB additional disk space.  Inference is very fast on a 2xL4's, for \$1/hour.
 - Dec 14, 2023 \-\- updated ollama and ollama\-webui to support multimodal models!<img src=".ollama.md.upload/paste-0.5831256738722361"   width="536.544px"  height="405.84400000000005px"  style="object-fit:cover"/>
 
 ---
