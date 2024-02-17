@@ -6,6 +6,8 @@
 <br/>
 </div>
 
+- [Use the Mojo Programming Language with Jupyter and to Edit Code](./mojo.md)
+
 - [Use the Mathematica Jupyter Kernel](./mathematica.md)
 
 - [Write a C Program Using a GPU and the CUDA Toolkit](./cuda.md)
@@ -22,4 +24,3 @@
   ](./colab.md)
 
 - [Building SageMath from Source on CoCalc using a 60 CPU machine with 240GB RAM in 18 Minutes](./build-sage.md)
-
