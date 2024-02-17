@@ -1,6 +1,10 @@
 # How to use Mojo on CoCalc via a Compute Server
 
-You can easily install and use Mojo on https://cocalc.com as follows. 
+You can easily install and use [Mojo](https://www.modular.com/max/mojo) on https://cocalc.com as explained in this new tutorial, which should take about 10 minutes to follow.
+
+Mojo is a new programming language that "combines the usability of Python with the performance of C, unlocking unparalleled programmability of AI hardware and extensibility of AI models."
+
+In [the tutorial](https://github.com/sagemathinc/cocalc-howto/blob/main/mojo.md), you will create a compute server, install Mojo in two minutes, use the Mojo Jupyter kernel, edit and run .mojo files and call Python code from Mojo.    Along the way you can try out any of the new features of Mojo and go through [the Mojo intro manual](https://docs.modular.com/mojo/manual/) to find out what this new programming language really feels like.
 
 ## Install Mojo
 
