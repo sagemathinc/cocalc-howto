@@ -1,5 +1,21 @@
 # Efficiently Running and Managing Large Language Models using a GPU on CoCalc.com with Ollama: A Tutorial
 
+## Feb 18, 2024
+
+To use OpenWebUI \(formerly ollama\-webui\) in CoCalc is now very easy! 
+
+Step 1. Create a compute server with a GPU, and select the **OpenWebUI \(Ollama\)** image:
+
+<img src=".ollama.md.upload/paste-0.8380651939698733"   width="736.99px"  height="336.40599999999995px"  style="object-fit:cover"/>
+
+Step 2: Use it as explained in the blue box below the image.
+
+\(I'll provide more details and tips here later, along with a new video.\)
+
+---
+
+**\*\* Everything below is basically outdated! \*\***
+
 ## Feb 6, 2024
 
 In order to install the absolutely latest version of ollama\-webui with ollama, please do the following:

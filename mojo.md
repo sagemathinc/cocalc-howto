@@ -145,3 +145,8 @@ CoCalc has extensive AI integration, but the models from OpenAI and Google don't
 
 ![](.mojo.md.upload/paste-0.09121604589971533)
 
+### Mixtral
+
+It turns out [the Dolphin\-Mixtral model](https://ollama.com/library/dolphin-mixtral) has some training on writing Mojo code.  You can use the OpenWebUI GPU compute server image (with two L4 GPU's) and install this model, and then ask it to write code for you.  Unfortunately, this isn't yet integrated with CoCalc's jupyter notebooks. 
+
+![](.mojo.md.upload/paste-0.5856450432007869)
