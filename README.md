@@ -6,6 +6,9 @@
 <br/>
 </div>
 
+- [Using RStudio Server on CoCalc via a Compute Server](./rstudio.md)
+
+
 - [Running Large Language Models using a GPU on CoCalc.com with OpenWebUI and Ollama](./ollama.md)
 
 - [Use the Mojo Programming Language with Jupyter and to Edit Code](./mojo.md)
