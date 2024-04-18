@@ -6,6 +6,8 @@
 <br/>
 </div>
 
+- [Running On-Prem Compute Servers on CoCalc](./onprem.md)
+
 - [Using VS Code on CoCalc](./vscode.md)
 
 - [Using JupyterLab on CoCalc](./jupyterlab.md)
