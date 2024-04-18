@@ -6,6 +6,8 @@
 <br/>
 </div>
 
+- [Using JupyterLab on CoCalc](./jupyterlab.md)
+
 - [Using RStudio Server on CoCalc via a Compute Server](./rstudio.md)
 
 
