@@ -6,6 +6,8 @@
 <br/>
 </div>
 
+- [JAX](./jax.md)
+
 - [Running On-Prem Compute Servers on CoCalc](./onprem.md)
 
 - [Using VS Code on CoCalc](./vscode.md)
