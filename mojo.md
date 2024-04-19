@@ -1,4 +1,6 @@
-# How to use Mojo on CoCalc via a Compute Server
+# Use Mojo on CoCalc
+
+VIDEO: https://youtu.be/qTYECdPGkJs 
 
 You can easily install and use [Mojo](https://www.modular.com/max/mojo) on https://cocalc.com as explained in this new tutorial, which should take about 10 minutes to follow.
 
@@ -20,30 +22,23 @@ the compute server by:
 - Click +New --> Linux Terminal
 - Set the terminal to run on your new compute server by clicking on the "Project" dropdown and selecting your compute server:
 
-![](.mojo.md.upload/paste-0.6508116145416152)
+<img src=".mojo.md.upload/paste-0.6508116145416152"   width="699.723px"  height="178.608px"  style="object-fit:cover"/>
 
-- Go to https://developer.modular.com/download, sign in if necessary, and see the page with instructions about how to install mojo.   In step 2 off to the right you'll see a step that looks like this:
-
-```
-curl https://get.modular.com | sh - && \
-modular auth mut_d81762...b4c04
-```
-
-where the string `mut_d81762...b4c04` is your Mojo auth token. 
-Paste the following in your terminal, replacing `mut_d81762...b4c04` with your personal Mojo auth token.  In about 2 minutes, mojo should be installed
-into your compute server, along with a Mojo Jupyter kernel.
+- Go to https://developer.modular.com/download, sign in if necessary, select the Linux instructions, and follow the directions exactly!  It should just work.
 
 ```sh
-export MUT=mut_d81762...b4c04
+curl -s https://get.modular.com | sh -
 
-sudo apt update && sudo apt install -y python3.10-venv && curl https://get.modular.com | sh - && modular auth $MUT && modular install mojo
+modular auth
+```
+
+This sets up the Mojo package manager.  Next, install mojo:
+
+```sh
+modular install mojo
 ```
 
 It looks like this in CoCalc:
-
-![](.mojo.md.upload/paste-0.6292145085370329)
-
-... then ...
 
 ![](.mojo.md.upload/paste-0.14566807107277535)
 
@@ -101,8 +96,8 @@ struct XGCD:
         self.y = 1;
 
         while b:
-            let q = a // b
-            let r = a % b
+            var q = a // b
+            var r = a % b
             self.x, prevx = prevx - q * self.x, self.x
             self.y, prevy = prevy - q * self.y, self.y
             a, b = b, r
@@ -129,8 +124,8 @@ Here is an example:
 
 ```py
 from python import Python
-let np = Python.import_module("numpy")
-let ar = np.arange(15).reshape(3, 5)
+var np = Python.import_module("numpy")
+var ar = np.arange(15).reshape(3, 5)
 print(ar)
 print(np.sin(ar))
 ```
@@ -150,3 +145,4 @@ CoCalc has extensive AI integration, but the models from OpenAI and Google don't
 It turns out [the Dolphin\-Mixtral model](https://ollama.com/library/dolphin-mixtral) has some training on writing Mojo code.  You can use the OpenWebUI GPU compute server image (with two L4 GPU's) and install this model, and then ask it to write code for you.  Unfortunately, this isn't yet integrated with CoCalc's jupyter notebooks. 
 
 ![](.mojo.md.upload/paste-0.5856450432007869)
+
