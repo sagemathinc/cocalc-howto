@@ -14,7 +14,6 @@
 
 - [Using RStudio Server on CoCalc via a Compute Server](./rstudio.md)
 
-
 - [Running Large Language Models using a GPU on CoCalc.com with OpenWebUI and Ollama](./ollama.md)
 
 - [Use the Mojo Programming Language with Jupyter and to Edit Code](./mojo.md)
@@ -33,3 +32,4 @@
   ](./colab.md)
 
 - [Building SageMath from Source on CoCalc using a 60 CPU machine with 240GB RAM in 18 Minutes](./build-sage.md)
+

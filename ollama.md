@@ -1,5 +1,9 @@
 # Efficiently Running and Managing Large Language Models using a GPU on CoCalc.com with Ollama: A Tutorial
 
+## April 18, 2024
+
+New Video Demo: https://youtu.be/OMN1af0LUcA 
+
 ## Feb 18, 2024
 
 To use OpenWebUI \(formerly ollama\-webui\) in CoCalc is now very easy! 

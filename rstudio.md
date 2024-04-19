@@ -1,5 +1,7 @@
 # Using RStudio Server on [CoCalc](https://cocalc.com) via a Compute Server
 
+VIDEO: https://youtu.be/Owq90O0vLJo
+
 [CoCalc's compute servers](https://doc.cocalc.com/compute_server.html) let you very easily run arbitrary virtual machines associated to any CoCalc project.  The cost is by the second \(pay as you go\) for cloud hosted VM's.  
 
 ### Create a Compute Server
