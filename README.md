@@ -6,6 +6,8 @@
 <br/>
 </div>
 
+- [Using SageMath with a CPU or GPU Server](https://youtu.be/MlSq8UpzyTQ)
+
 - [JAX](./jax.md)
 
 - [Running On-Prem Compute Servers on CoCalc](./onprem.md)
