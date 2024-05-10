@@ -6,6 +6,10 @@
 <br/>
 </div>
 
+- [Using the Lean Theorem Prover on CoCalc with VS Code and a Compute Server](./lean.md)
+
+- [Turbocharge Your Research: A Quick Guide to High-Performance Computing on CoCalc](./hpc.md)
+
 - [Using SageMath with a CPU or GPU Server](https://youtu.be/MlSq8UpzyTQ)
 
 - [JAX](./jax.md)
