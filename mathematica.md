@@ -55,7 +55,7 @@ Visit https://wolfram.com/engine/free-license to get your free license.
 Wolfram ID: wstein@sagemath.com
 Password: 
 Wolfram Engine activated. See https://www.wolfram.com/wolframscript/ for more information.
-Wolfram Language 13.3.0 Engine for Linux x86 (64-bit)
+Wolfram Language 14.0 Engine for Linux x86 (64-bit)
 Copyright 1988-2023 Wolfram Research, Inc.
 
 In[1]:= FactorInteger[2024]                                                        
