@@ -1,11 +1,5 @@
 # Applications of Compute Servers on https://CoCalc.com
 
-<div style="text-align:center">
-<br/>
-<img src=".landing.png"   width="278.352px"  height="277.023px"  style="object-fit:cover"/>
-<br/>
-</div>
-
 - [Using the Lean Theorem Prover on CoCalc with VS Code and a Compute Server](./lean.md)
 
 - [Turbocharge Your Research: A Quick Guide to High-Performance Computing on CoCalc](./hpc.md)
