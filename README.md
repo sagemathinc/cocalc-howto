@@ -1,5 +1,9 @@
 # Applications of Compute Servers on https://CoCalc.com
 
+- [How to efficiently copy files between compute servers using ssh and rsync](https://www.youtube.com/watch?v=eDdJzBQOyqc)
+
+- [How to use fast local scratch directories on CoCalc compute servers](https://www.youtube.com/watch?v=ClhadqBFbD4&t=1s) 
+
 - [Using the Lean Theorem Prover on CoCalc with VS Code and a Compute Server](./lean.md)
 
 - [Turbocharge Your Research: A Quick Guide to High-Performance Computing on CoCalc](./hpc.md)
